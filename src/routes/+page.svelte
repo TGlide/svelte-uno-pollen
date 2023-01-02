@@ -25,6 +25,12 @@
 		try editing <strong>src/routes/+page.svelte</strong>
 	</h2>
 
+	<div class="flex gap-8">
+		<p class="bg-blue-500 color-grey-100">1</p>
+		<p class="pt-5 bg-red color-grey-100">2</p>
+		<p class="pb-5 bg-green-500 color-grey-100">3</p>
+	</div>
+
 	<Counter />
 </section>
 

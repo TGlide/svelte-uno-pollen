@@ -1,4 +1,5 @@
 import { extractorSvelte } from '@unocss/core';
+
 import pollenObj from './src/styles/pollen.json';
 
 const typography = [
@@ -48,6 +49,15 @@ const layout = [
 			[`pl-${key}`, { 'padding-left': `var(--size-${key})` }],
 			[`pt-${key}`, { 'padding-top': `var(--size-${key})` }],
 			[`pb-${key}`, { 'padding-bottom': `var(--size-${key})` }],
+			[
+				`px-${key}`,
+				{ 'padding-left': `var(--size-${key})`, 'padding-right': `var(--size-${key})` },
+			],
+			[
+				`py-${key}`,
+				{ 'padding-top': `var(--size-${key})`, 'padding-bottom': `var(--size-${key})` },
+			],
+			[`gap-${key}`, { gap: `var(--size-${key})` }],
 		];
 	}),
 	// Container Widths
@@ -108,9 +118,39 @@ const colors = [
 	}),
 ];
 
+const flex = [
+	// display
+	['flex', { display: 'flex' }],
+	['inline-flex', { display: 'inline-flex' }],
+	['flex-inline', { display: 'inline-flex' }],
+
+	// flex
+	[/^flex-(\d+)$/, ([, d]) => ({ flex: d })],
+	['flex-1', { flex: '1 1 0%' }],
+	['flex-auto', { flex: '1 1 auto' }],
+	['flex-initial', { flex: '0 1 auto' }],
+	['flex-none', { flex: 'none' }],
+
+	// shrink/grow/basis
+	[/^(?:flex-)?shrink(?:-(.*))?$/, ([, d = '']) => ({ 'flex-shrink': d })],
+	[/^(?:flex-)?grow(?:-(.*))?$/, ([, d = '']) => ({ 'flex-grow': d })],
+	[/^(?:flex-)?basis-(.+)$/, ([, d]) => ({ 'flex-basis': d })],
+
+	// directions
+	['flex-row', { 'flex-direction': 'row' }],
+	['flex-row-reverse', { 'flex-direction': 'row-reverse' }],
+	['flex-col', { 'flex-direction': 'column' }],
+	['flex-col-reverse', { 'flex-direction': 'column-reverse' }],
+
+	// wraps
+	['flex-wrap', { 'flex-wrap': 'wrap' }],
+	['flex-wrap-reverse', { 'flex-wrap': 'wrap-reverse' }],
+	['flex-nowrap', { 'flex-wrap': 'nowrap' }],
+];
+
 /** @type {import('@unocss/vite').VitePluginConfig} */
 export default {
 	extractors: [extractorSvelte],
 	presets: [],
-	rules: [...typography, ...layout, ...ui, ...grid, ...colors],
+	rules: [...typography, ...layout, ...ui, ...grid, ...colors, ...flex],
 };
