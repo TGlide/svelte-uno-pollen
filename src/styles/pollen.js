@@ -29,7 +29,11 @@ export default {
 		'000': 'clamp(0.625rem, 0.55rem + 0.25vw, 0.75rem)',
 		'00': 'clamp(0.75rem, 0.675rem + 0.25vw, 0.875rem)'
 	},
-	font: { mono: "'Fira Mono', monospace" },
+	font: {
+		sans: 'system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue',
+		serif: 'Georgia, Cambria, "Times New Roman", Times, serif',
+		mono: "'Fira Mono', monospace"
+	},
 	weight: {
 		light: '300',
 		regular: '400',
