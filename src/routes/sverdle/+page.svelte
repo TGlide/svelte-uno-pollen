@@ -56,9 +56,7 @@
 	 */
 	function update(event: MouseEvent) {
 		const guess = data.guesses[i];
-		const key = (event.target as HTMLButtonElement).getAttribute(
-			'data-key'
-		);
+		const key = (event.target as HTMLButtonElement).getAttribute('data-key');
 
 		if (key === 'backspace') {
 			data.guesses[i] = guess.slice(0, -1);
@@ -187,7 +185,7 @@
 			force: 0.7,
 			stageWidth: window.innerWidth,
 			stageHeight: window.innerHeight,
-			colors: ['#ff3e00', '#40b3ff', '#676778']
+			colors: ['#ff3e00', '#40b3ff', '#676778'],
 		}}
 	/>
 {/if}
@@ -200,7 +198,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
+		gap: var(--size-4);
 		flex: 1;
 	}
 
@@ -212,7 +210,7 @@
 		content: 'i';
 		display: inline-block;
 		font-size: 0.8em;
-		font-weight: 900;
+		font-weight: var(--weight-black);
 		width: 1em;
 		height: 1em;
 		padding: 0.2em;
@@ -277,16 +275,16 @@
 	}
 
 	.letter.exact {
-		background: var(--color-theme-2);
+		background: var(--color-success);
 		color: white;
 	}
 
 	.letter.close {
-		border: 2px solid var(--color-theme-2);
+		border: 2px solid var(--color-success);
 	}
 
 	.selected {
-		outline: 2px solid var(--color-theme-1);
+		outline: 2px solid var(--color-orange-800);
 	}
 
 	.controls {
@@ -324,7 +322,7 @@
 	}
 
 	.keyboard button.exact {
-		background: var(--color-theme-2);
+		background: var(--color-success);
 		color: white;
 	}
 
@@ -333,11 +331,11 @@
 	}
 
 	.keyboard button.close {
-		border: 2px solid var(--color-theme-2);
+		border: 2px solid var(--color-success);
 	}
 
 	.keyboard button:focus {
-		background: var(--color-theme-1);
+		background: var(--color-orange-800);
 		color: white;
 		outline: none;
 	}
@@ -375,7 +373,7 @@
 
 	.restart:focus,
 	.restart:hover {
-		background: var(--color-theme-1);
+		background: var(--color-orange-800);
 		color: white;
 		outline: none;
 	}

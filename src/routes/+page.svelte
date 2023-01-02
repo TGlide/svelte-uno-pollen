@@ -10,7 +10,7 @@
 </svelte:head>
 
 <section>
-	<h1>
+	<h1 class="weight-regular text-center w-full">
 		<span class="welcome">
 			<picture>
 				<source srcset={welcome} type="image/webp" />
@@ -21,15 +21,9 @@
 		to your new<br />SvelteKit app
 	</h1>
 
-	<h2>
+	<h2 class="weight-regular fs-0">
 		try editing <strong>src/routes/+page.svelte</strong>
 	</h2>
-
-	<div class="flex gap-8">
-		<p class="bg-blue-500 color-grey-100">1</p>
-		<p class="pt-5 bg-red color-grey-100">2</p>
-		<p class="pb-5 bg-green-500 color-grey-100">3</p>
-	</div>
 
 	<Counter />
 </section>
@@ -41,10 +35,6 @@
 		justify-content: center;
 		align-items: center;
 		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
 	}
 
 	.welcome {

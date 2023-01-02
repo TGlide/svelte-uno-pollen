@@ -13,7 +13,9 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>
+			visit <a class="weight-bold" href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit
+		</p>
 	</footer>
 </div>
 
@@ -28,9 +30,9 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
+		padding: var(--size-4);
 		width: 100%;
-		max-width: 64rem;
+		max-width: var(--width-lg);
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
@@ -40,16 +42,12 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
+		padding: var(--size-3);
 	}
 
 	@media (min-width: 480px) {
 		footer {
-			padding: 12px 0;
+			padding: var(--size-3) 0;
 		}
 	}
 </style>

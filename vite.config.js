@@ -6,13 +6,13 @@ import unoConfig from './uno.config';
 const config = {
 	plugins: [
 		Unocss({
-			...unoConfig
+			...unoConfig,
 		}),
-		sveltekit()
+		sveltekit(),
 	],
 	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+		include: ['src/**/*.{test,spec}.{js,ts}'],
+	},
 };
 
 export default config;

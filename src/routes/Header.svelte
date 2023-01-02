@@ -4,7 +4,7 @@
 	import github from '$lib/images/github.svg';
 </script>
 
-<header>
+<header class="flex justify-between">
 	<div class="corner">
 		<a href="https://kit.svelte.dev">
 			<img src={logo} alt="SvelteKit" />
@@ -39,11 +39,6 @@
 </header>
 
 <style>
-	header {
-		display: flex;
-		justify-content: space-between;
-	}
-
 	.corner {
 		width: 3em;
 		height: 3em;
@@ -106,24 +101,24 @@
 		top: 0;
 		left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
+		border-top: var(--size) solid var(--color-orange-800);
 	}
 
 	nav a {
 		display: flex;
 		height: 100%;
 		align-items: center;
-		padding: 0 0.5rem;
+		padding: 0 var(--size-2);
 		color: var(--color-text);
 		font-weight: 700;
 		font-size: 0.8rem;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		letter-spacing: var(--letter-xl);
 		text-decoration: none;
 		transition: color 0.2s linear;
 	}
 
 	a:hover {
-		color: var(--color-theme-1);
+		color: var(--color-orange-800);
 	}
 </style>
